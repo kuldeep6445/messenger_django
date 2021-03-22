@@ -6,10 +6,17 @@
     <title>Document</title>
 </head>
 <body>
-    <p>you are at chatrview</p>
+    <p>you are at chatview</p>
     <p>you are logged in as {{logged_in_name}}</p>
     <form action="../account/logout/">
         <button>logout</button>
     </form>
+    <form action="" method="post">{%csrf_token%}
+        <input name = "xyz" type="text" placeholder="enter username">
+        <button type="submit">search</button>
+    </form>
+    {%for item in names%}
+    <li>{{item}}</li>
+    {%endfor%}
 </body>
 </html>
